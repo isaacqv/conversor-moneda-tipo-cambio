@@ -1,5 +1,6 @@
 package com.example.conversor_moneda.dao.entity;
 
+import com.example.conversor_moneda.util.Utilitario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
@@ -34,7 +35,7 @@ public class MonedaEntity {
 
     public void setNombreMoneda(String nombreMoneda) {
         if (nombreMoneda != null) {
-            this.nombreMoneda = nombreMoneda.toUpperCase();
+            this.nombreMoneda = Utilitario.normalizarCadena(nombreMoneda);
         } else {
             this.nombreMoneda = null;
         }
